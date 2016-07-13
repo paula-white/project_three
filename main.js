@@ -11,7 +11,7 @@ import {
   StyleSheet,
   Navigator,
 } from 'react-native';
-
+var TimerMixin = require('react-timer-mixin');
 var Login =  require('./login.js')
 var Contacts = require('./contacts.js');
 var Alerts = require('./alerts.js');
@@ -23,14 +23,21 @@ var ROUTES = {
 };
 
 
-// Have a function that runs every half hour
+// Have a function that runs every hour
   // Based on the timestamp that comes from the Geolocation
     // Change the styles on the Navigator
+    // var time = new Date(TimeStamp);
+    // var hours = time.getHours(),
 
+// var hours = function () {
+//
+//
+// };
 
 
 // class MyDigits extends React.Component{
 module.exports = React.createClass({
+  mixins: [TimerMixin],
   getInitialState: function() {
     return {navigator: {}};
   },
@@ -56,7 +63,21 @@ module.exports = React.createClass({
          configureScene={() => { return Navigator.SceneConfigs.FloatFromRight; }}
         />
     );
-  }});
+  },
+  componentDidMount: function() {
+    this.setInterval( () => {
+       let d = new Date();
+      //  When the timestamp = 8pm, change the style.container state to class Nightime
+      //  When the timestamp = 8am, change the style.container state to class daytime
+      if (d.getHours() > 8 && d.getHours() <= 20) {
+
+      } else if (d.getHours() > 20 || d.getHours() <= 8) {
+
+      }
+    }, 1000 * 60 * 60);
+  }
+}
+);
 
 var styles = StyleSheet.create({
   container: {

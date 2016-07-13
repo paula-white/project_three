@@ -6,6 +6,7 @@ import {
   Text,
   ListView,
   Button,
+  TouchableHighlight,
   View
 } from 'react-native';
 
@@ -15,30 +16,41 @@ class Alerts extends Component {
     super();
     console.log("constructor");
   }
-  onPress() {
-    // Navigate back to contacts
-    // navigator.pop('contacts');
-
-  }
-
-
-
   render() {
-    console.log("In render");
-    console.log(this.props);
-    return (
 
+  //   var onPress = function() {
+  //     // Navigate back to contacts
+  //     // navigator.pop('contacts');
+  //     this.props.navigator.pop();
+  // }
+    return (
       <View>
+          <TouchableHighlight style={ styles.button } onPress={ () => this.props.navigator.pop() }>
+            <Text style={ styles.buttonText }>Back</Text>
+          </TouchableHighlight>
         <Text>{this.props.contact.firstName}</Text>
       </View>
     );
   }
 
 }
-module.exports = Alerts;
 
-//  On press of the contact_name link back to contacts page
-// onPress: function(alerts) {
-// this.props.navigator.pop(
-//   {name: "contacts"}
-//   );
+var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+   	marginTop: 80
+  },
+  button: {
+  	height:60,
+    justifyContent: 'center',
+    backgroundColor: '#efefef',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
+  buttonText: {
+  	fontSize:20
+  }
+});
+
+module.exports = Alerts;
