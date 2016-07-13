@@ -1,6 +1,8 @@
-//  Most route componenet - focal point od the application
+//  Most route componenet - focal point of the application
 //  Navigator, component stack
-//  By default our application should always show signin.js (twitter digits)s
+//  By default our application should always show signin.js (twitter digits)
+//  Pushing (navigating forward) and pooping  (navigating back) views
+//  replace the entire view stack after the sign in - immediately reset route stack
 
 
 import React, { Component } from 'react';
@@ -10,33 +12,48 @@ import {
   Navigator,
 } from 'react-native';
 
+var Login =  require('./login.js')
+var Contacts = require('./contacts.js');
+var Alerts = require('./alerts.js');
 
-var DigitsAuthenticateButton = require("./DigitsAuthenticateButton");
+var ROUTES = {
+  login: Login,
+  contacts: Contacts,
+  alerts: Alerts
+};
 
-var Contacts = require('./Contacts');
-var Alerts = require('./Alerts');
+// class MyDigits extends React.Component{
+module.exports = React.createClass({
+  getInitialState: function() {
+    return {navigator: {}};
+  },
+  componentWillMount: function() {
 
-class Navigation extends React.Component{
-  render() {
+  },
+  loginCallback: function() {
+    this.state.navigator.immediatelyResetRouteStack([
+      {name: "contacts"}
+    ]);
+  },
+  renderScene(route, navigator) {
+    this.state.navigator = navigator;
+    var Component = ROUTES[route.name];
+
+    return <Component route={route} navigator={navigator} callback={this.loginCallback}/>;
+  },
+  render: function () {
     return (
       <Navigator
         style={styles.container}
-         initialRoute={{id: 'Signin', name: 'Index'}}
-        renderScene={this.navigatorRenderScene}
+         initialRoute={{name: 'login'}}
+         renderScene={this.renderScene}
          configureScene={() => { return Navigator.SceneConfigs.FloatFromRight; }}
         />
     );
-  }
+  }});
 
-  navigatorRenderScene(route, navigator) {
-    _navigator = navigator;
-    switch (route.id) {
-      case 'first':
-        return (<First navigator={navigator} title="first"/>);
-      case 'second':
-        return (<Second navigator={navigator} title="second" />);
-        case 'third':
-          return (<Second navigator={navigator} title="third" />);
-    }
+var styles = StyleSheet.create({
+  container: {
+
   }
-}
+});

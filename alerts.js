@@ -2,22 +2,34 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
+  Navigator,
   Text,
+  Button,
   View
 } from 'react-native';
 
 
 class Alerts extends Component {
+  onPress() {
+    // Navigate back to contacts
+    // navigator.pop('contacts');
+  }
+
   render() {
     return (
-      <Navigator
-          renderScene={this.renderScene.bind(this)}
-          navigator={this.props.navigator}
-
-          } />
+      <Text>This is the alerts page</Text>
     );
   }
 
+}
+module.exports = Alerts;
 
 
-  module.exports = Alerts;
+
+
+//
+// <Navigator
+//     renderScene={this.renderScene.bind(this)}
+//     navigator={this.props.navigator}
+//
+//     } />
