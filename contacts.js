@@ -19,16 +19,30 @@ var Contacts = React.createClass({
     this.fetchData();
   },
   fetchData: function() {
-      this.setState({
-        dataSource: this.state.dataSource.cloneWithRows([{name: "Someone", number: "123"}, {name: "anotherone", number: "12345"}, {name: "time to bed", number: "98438"}]),
-        loaded: true
-      })
+
+    var AddressBook = require('react-native-addressbook')
+
+    AddressBook.getContacts( (err, contacts) => {
+      if(err && err.type === 'permissionDenied'){
+        // x.x
+      }
+      else{
+        // var fake = [{name: "Someone", number: "123"}, {name: "anotherone", number: "12345"}, {name: "time to bed", number: "98438"}]
+        this.setState({
+          dataSource: this.state.dataSource.cloneWithRows(contacts),
+          loaded: true
+        });
+      }
+    });
+
+  },
+  onPress: function() {
+
   },
   renderContact: function(contact) {
      return (
        <View>
-         <Text>{contact.name}</Text>
-         <Text>{contact.number}</Text>
+         <Text contact_id={contact.recordID} onPress=this.onPress>{contact.firstName}</Text>
        </View>
      );
    },

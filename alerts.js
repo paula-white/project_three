@@ -17,7 +17,7 @@ class Alerts extends Component {
 
   render() {
     return (
-      <Text>This is the alerts page</Text>
+      <Text>{this.props.contact_id}</Text>
     );
   }
 

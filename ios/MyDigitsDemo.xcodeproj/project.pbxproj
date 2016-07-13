@@ -29,6 +29,7 @@
 		25790E131D3488B3009F194D /* DGTAuthenticateButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25790E121D3488B3009F194D /* DGTAuthenticateButtonView.m */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		E40871271D34CD75005182FA /* RCTDigitsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E40871261D34CD75005182FA /* RCTDigitsManager.m */; };
+		E40871311D35C6D3005182FA /* libRCTAddressBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E408712E1D35C67C005182FA /* libRCTAddressBook.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,20 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		E408712D1D35C67C005182FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E40871281D35C67C005182FA /* RCTAddressBook.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 145CC5701AED80100006342E;
+			remoteInfo = RCTAddressBook;
+		};
+		E408712F1D35C67C005182FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E40871281D35C67C005182FA /* RCTAddressBook.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 145CC57B1AED80100006342E;
+			remoteInfo = RCTAddressBookTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -141,6 +156,7 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		E40871251D34CD2F005182FA /* RCTDigitsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTDigitsManager.h; sourceTree = "<group>"; };
 		E40871261D34CD75005182FA /* RCTDigitsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTDigitsManager.m; sourceTree = "<group>"; };
+		E40871281D35C67C005182FA /* RCTAddressBook.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAddressBook.xcodeproj; path = "../node_modules/react-native-addressbook/RCTAddressBook.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E40871311D35C6D3005182FA /* libRCTAddressBook.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -285,6 +302,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				E40871281D35C67C005182FA /* RCTAddressBook.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -328,6 +346,15 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* MyDigitsDemo.app */,
 				00E356EE1AD99517003FC87E /* MyDigitsDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E40871291D35C67C005182FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E408712E1D35C67C005182FA /* libRCTAddressBook.a */,
+				E40871301D35C67C005182FA /* RCTAddressBookTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -402,6 +429,10 @@
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
+				},
+				{
+					ProductGroup = E40871291D35C67C005182FA /* Products */;
+					ProjectRef = E40871281D35C67C005182FA /* RCTAddressBook.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302B61ABCB90400DB3ED1 /* Products */;
@@ -517,6 +548,20 @@
 			fileType = archive.ar;
 			path = libRCTText.a;
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E408712E1D35C67C005182FA /* libRCTAddressBook.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTAddressBook.a;
+			remoteRef = E408712D1D35C67C005182FA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E40871301D35C67C005182FA /* RCTAddressBookTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RCTAddressBookTests.xctest;
+			remoteRef = E408712F1D35C67C005182FA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
