@@ -22,6 +22,13 @@ var ROUTES = {
   alerts: Alerts
 };
 
+
+// Have a function that runs every half hour
+  // Based on the timestamp that comes from the Geolocation
+    // Change the styles on the Navigator
+
+
+
 // class MyDigits extends React.Component{
 module.exports = React.createClass({
   getInitialState: function() {
@@ -38,8 +45,7 @@ module.exports = React.createClass({
   renderScene(route, navigator) {
     this.state.navigator = navigator;
     var Component = ROUTES[route.name];
-
-    return <Component route={route} navigator={navigator} callback={this.loginCallback}/>;
+    return <Component route={route} navigator={navigator} callback={this.loginCallback} contact={route.contact}/>;
   },
   render: function () {
     return (

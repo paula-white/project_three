@@ -36,13 +36,15 @@ var Contacts = React.createClass({
     });
 
   },
-  onPress: function() {
-
-  },
   renderContact: function(contact) {
+      var onPress = function() {
+      this.props.navigator.push(
+        {name: "alerts", contact: contact}
+      );
+    }
      return (
        <View>
-         <Text contact_id={contact.recordID} onPress=this.onPress>{contact.firstName}</Text>
+         <Text onPress={onPress.bind(this)}>{contact.firstName.toUpperCase()}</Text>
        </View>
      );
    },
