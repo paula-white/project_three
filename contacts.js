@@ -3,6 +3,8 @@ import {
   AppRegistry,
   Text,
   ListView,
+  StyleSheet,
+  Image,
   View
 } from 'react-native';
 
@@ -24,17 +26,14 @@ var Contacts = React.createClass({
 
     AddressBook.getContacts( (err, contacts) => {
       if(err && err.type === 'permissionDenied'){
-        // x.x
       }
       else{
-        // var fake = [{name: "Someone", number: "123"}, {name: "anotherone", number: "12345"}, {name: "time to bed", number: "98438"}]
         this.setState({
           dataSource: this.state.dataSource.cloneWithRows(contacts),
           loaded: true
         });
       }
     });
-
   },
   renderContact: function(contact) {
       var onPress = function() {
@@ -43,18 +42,63 @@ var Contacts = React.createClass({
       );
     }
      return (
-       <View>
-         <Text onPress={onPress.bind(this)}>{contact.firstName.toUpperCase()}</Text>
-       </View>
-     );
-   },
-  render() {
-    console.log("Rendering contacts")
-    return (<ListView
-        dataSource={this.state.dataSource}
-        renderRow={this.renderContact}
-      />);
+
+         <View style={[styles.header, styles.outline]}>
+           <View style={styles.cntct}>
+           <Text style={styles.contactsText} onPress={onPress.bind(this)}>{contact.firstName.toUpperCase()}</Text>
+           </View>
+        </View>
+      );
+    },
+
+    render() {
+      console.log("Rendering contacts")
+      return (
+        <View style={styles.container}>
+        <Text>Contacts</Text>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={this.renderContact}
+        />
+      </View>);
+      }
+    });
+
+var styles = StyleSheet.create({
+ container: {
+ flex: 1,
+ marginTop: 20
+ // 	 justifyContent: 'space-around',
+  //  alignItems: 'center'
+  },
+
+  cntct: {
+  alignItems: 'center',
+  justifyContent: 'center'
+  },
+
+  contactsText: {
+  marginTop: 30,
+  fontSize: 20,
+  color: '#586675',
+  alignItems: 'center'
+  },
+
+  header: {
+  flex: 1,
+
+  },
+
+  body: {
+  flex: 1,
+  },
+
+  outline: {
+  borderColor: '#586776',
+  borderWidth: 2,
+  borderRadius: 15
   }
+
 });
 
 

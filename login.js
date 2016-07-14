@@ -40,7 +40,7 @@ var Login = React.createClass({
     return (
       <DigitsLoginButton
         options={{
-          title: "Logging in is great",
+          title: "Logging",
           phoneNumber: "+61",
           appearance: {
             backgroundColor: {
@@ -66,7 +66,7 @@ var Login = React.createClass({
           }
         }}
         completion={this.completion}
-        text="Login"
+        text="LOGIN"
         buttonStyle={styles.DigitsAuthenticateButton}
         textStyle={styles.DigitsAuthenticateButtonText}/>
       );
@@ -87,20 +87,21 @@ var styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#0f1324'
   },
   DigitsAuthenticateButton: {
+    borderColor: '#586776',
+    borderWidth: 2,
     height: 50,
     width: 230,
-    backgroundColor: '#13988A',
     justifyContent: 'center',
-    borderRadius: 5
+    borderRadius: 15
   },
   DigitsAuthenticateButtonText: {
-    fontSize: 16,
-    color: '#fff',
+    fontSize: 20,
+    color: '#586776',
     alignSelf: 'center',
-    fontWeight: 'bold'
+
   }
 });
 
