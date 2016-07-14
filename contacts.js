@@ -43,9 +43,9 @@ var Contacts = React.createClass({
     }
      return (
 
-         <View style={[styles.header, styles.outline]}>
-           <View style={styles.cntct}>
-           <Text style={styles.contactsText} onPress={onPress.bind(this)}>{contact.firstName.toUpperCase()}</Text>
+         <View style={stylesnight.outline}>
+           <View style={stylesnight.cntct}>
+           <Text style={stylesnight.contactsText} onPress={onPress.bind(this)}>{contact.firstName.toUpperCase()}</Text>
            </View>
         </View>
       );
@@ -54,27 +54,33 @@ var Contacts = React.createClass({
     render() {
       console.log("Rendering contacts")
       return (
-        <View style={styles.container}>
-        <Text>Contacts</Text>
+
+        <Image source={require('./img/midnight.png')} style={{width: 400, height: 700}}>
+        <Text style={stylesnight.header}>CONTACTS</Text>
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this.renderContact}
-        />
-      </View>);
+          />
+
+        </Image>);
       }
     });
 
-var styles = StyleSheet.create({
- container: {
- flex: 1,
- marginTop: 20
- // 	 justifyContent: 'space-around',
-  //  alignItems: 'center'
+var stylesnight = StyleSheet.create({
+
+  header: {
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontSize: 35,
+  fontWeight: 'bold',
+  color: 'white',
+  marginTop: 40,
+  marginBottom: 40
   },
 
   cntct: {
   alignItems: 'center',
-  justifyContent: 'center'
+  justifyContent: 'center',
   },
 
   contactsText: {
@@ -84,19 +90,48 @@ var styles = StyleSheet.create({
   alignItems: 'center'
   },
 
-  header: {
-  flex: 1,
+  outline: {
+  borderColor: '#586776',
+  borderWidth: 2,
+  borderRadius: 15,
+  width: 360,
+  alignItems: 'center',
+  marginTop: 10,
+  }
 
+});
+
+var stylesday = StyleSheet.create({
+
+  header: {
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontSize: 35,
+  fontWeight: 'bold',
+  color: 'white',
+  marginTop: 40,
+  marginBottom: 40
   },
 
-  body: {
-  flex: 1,
+  cntct: {
+  alignItems: 'center',
+  justifyContent: 'center',
+  },
+
+  contactsText: {
+  marginTop: 30,
+  fontSize: 20,
+  color: '#586675',
+  alignItems: 'center'
   },
 
   outline: {
   borderColor: '#586776',
   borderWidth: 2,
-  borderRadius: 15
+  borderRadius: 15,
+  width: 360,
+  alignItems: 'center',
+  marginTop: 10,
   }
 
 });

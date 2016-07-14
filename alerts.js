@@ -20,33 +20,38 @@ class Alerts extends Component {
   }
   render() {
     return (
-      <View>
-          <TouchableHighlight style={ styles.button } onPress={ () => this.props.navigator.pop() }>
-            <Text style={styles.buttonText }>Back</Text>
+      <Image source={require('./img/s8.png')} style={{width: 400, height: 700}}>
+      <View style={styles.container}>
+          <TouchableHighlight style={styles.button} onPress={ () => this.props.navigator.pop() }>
+            <Text style={styles.buttonText}>{this.props.contact.firstName.toUpperCase()}</Text>
           </TouchableHighlight>
-        <Text>{this.props.contact.firstName}</Text>
+
+        
       </View>
+      </Image>
+
+
     );
   }
-
 }
 
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-   	marginTop: 80
   },
   button: {
     borderColor: '#586776',
     borderWidth: 2,
     height: 50,
-    width: 230,
+    width: 100,
     justifyContent: 'center',
-    borderRadius: 15
+    borderRadius: 15,
+    marginTop: 20
   },
 
   buttonText: {
-  fontSize:15
+  fontSize:15,
+  color: '#bebea7'
   }
 });
 

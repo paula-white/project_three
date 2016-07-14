@@ -30,6 +30,7 @@ var Login = React.createClass({
     } else if (response) {
       var logged = JSON.stringify(response) === '{}' ? false : true;
 
+
       // this.setState({ logged: logged, error: false, response: response });
       if (logged) {
         this.props.callback();
@@ -71,6 +72,8 @@ var Login = React.createClass({
         textStyle={styles.DigitsAuthenticateButtonText}/>
       );
   },
+
+
   render: function() {
     var error = this.state.error ? <Text>An error occured.</Text> : null;
     var content = this.renderLogin();
