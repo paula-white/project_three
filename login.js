@@ -41,7 +41,7 @@ var Login = React.createClass({
     return (
       <DigitsLoginButton
         options={{
-          title: "Logging",
+          title: "LOGIN",
           phoneNumber: "+61",
           appearance: {
             backgroundColor: {

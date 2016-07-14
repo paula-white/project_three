@@ -4,10 +4,13 @@ import {
   Text,
   ListView,
   StyleSheet,
+  Navigator,
   Image,
   View
 } from 'react-native';
 
+var Digits = require('react-native-fabric-digits');
+var { DigitsLoginButton, DigitsLogoutButton } = Digits;
 var Contacts = React.createClass({
   getInitialState: function() {
     return {
@@ -50,24 +53,54 @@ var Contacts = React.createClass({
         </View>
       );
     },
+    completion: function(error, response) {
+      if (error && error.code !== 1) {
+        this.setState({ logged: false, error: true, response: {} });
+      } else if (response) {
+        var logged = JSON.stringify(response) === '{}' ? false : true;
+
+
+        // this.setState({ logged: logged, error: false, response: response });
+        if (logged) {
+          this.props.callback();
+        } else {
+          this.props.navigator.immediatelyResetRouteStack([
+            {name: "login"}
+          ]);
+        }
+      }
+    },
 
     render() {
       console.log("Rendering contacts")
       return (
+        <Image source={require('./img/midnight.png')} style={{width: 375, height: 700}}>
+        <DigitsLogoutButton
+          completion={this.completion}
+          text="LOGOUT"
+          buttonStyle={stylesnight.DigitsAuthenticateButton}
+          textStyle={stylesnight.DigitsAuthenticateButtonText}/>
+        <View style={stylesnight.container}>
 
-        <Image source={require('./img/midnight.png')} style={{width: 400, height: 700}}>
         <Text style={stylesnight.header}>CONTACTS</Text>
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this.renderContact}
           />
+        </View>
 
         </Image>);
       }
     });
 
-var stylesnight = StyleSheet.create({
 
+  var stylesnight = StyleSheet.create({
+  container: {
+  flex: 1,
+  justifyContent: "center",
+  alignItems: "center",
+    // overflow: "hidden"
+  },
   header: {
   alignItems: 'center',
   justifyContent: 'center',
@@ -84,9 +117,11 @@ var stylesnight = StyleSheet.create({
   },
 
   contactsText: {
-  marginTop: 30,
+  marginTop: 10,
+  marginBottom: 10,
   fontSize: 20,
   color: '#586675',
+  justifyContent: 'center',
   alignItems: 'center'
   },
 
@@ -94,18 +129,40 @@ var stylesnight = StyleSheet.create({
   borderColor: '#586776',
   borderWidth: 2,
   borderRadius: 15,
-  width: 360,
+  width: 320,
   alignItems: 'center',
+  justifyContent: 'center',
   marginTop: 10,
+
+  },
+  DigitsAuthenticateButton: {
+    borderColor: '#586776',
+    borderWidth: 2,
+    height: 30,
+    width: 70,
+    justifyContent: 'center',
+    borderRadius: 5,
+    marginLeft: 275,
+    marginTop: 15,
+
+  },
+  DigitsAuthenticateButtonText: {
+    fontSize: 13,
+    color: '#586776',
+    alignSelf: 'center',
+    // fontWeight: 'bold'
+
   }
 
 });
+
 
 var stylesday = StyleSheet.create({
 
   header: {
   alignItems: 'center',
   justifyContent: 'center',
+  textAlign: 'center',
   fontSize: 35,
   fontWeight: 'bold',
   color: 'white',
@@ -114,12 +171,12 @@ var stylesday = StyleSheet.create({
   },
 
   cntct: {
-  alignItems: 'center',
+  alignItems: 'flex-start',
   justifyContent: 'center',
   },
 
   contactsText: {
-  marginTop: 30,
+  justifyContent: 'center',
   fontSize: 20,
   color: '#586675',
   alignItems: 'center'
@@ -131,6 +188,7 @@ var stylesday = StyleSheet.create({
   borderRadius: 15,
   width: 360,
   alignItems: 'center',
+  justifyContent: 'center',
   marginTop: 10,
   }
 
