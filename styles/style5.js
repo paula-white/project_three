@@ -108,6 +108,16 @@ module.exports = StyleSheet.create({
   timeText: {
   color: 'white',
   fontSize: 20,
-  }
+  },
+
+  inputs: {
+  borderColor: '#e7bab6',
+  borderWidth: 2,
+  height: 200,
+  width: 300,
+  borderRadius: 15,
+  marginTop: 70,
+  color:'#e7bab6',
+  },
 
 });

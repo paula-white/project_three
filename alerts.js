@@ -7,8 +7,9 @@ import {
   ListView,
   Button,
   TouchableHighlight,
-  AlertIOS,
+  Alert,
   Image,
+  TextInput,
   View
 } from 'react-native';
 
@@ -34,10 +35,10 @@ class Alerts extends Component {
     }  else if (randomNumber < 0.55) {
         image = require("./img/s4.png");
         styles = require("./styles/style4.js");
-    }  else if (randomNumber < 0.14) {
+    }  else if (randomNumber < 0.64) {
         image = require("./img/daytime.png");
         styles = require("./styles/styledaytime.js");
-    } else if (randomNumber < 0.49) {
+    } else if (randomNumber < 0.47) {
         image = require("./img/s6.png");
         styles = require("./styles/style6.js");
     }  else {
@@ -58,11 +59,13 @@ class Alerts extends Component {
               <View style={styles.timeCheck}><Text style={styles.timeText}>15</Text></View>
               <View style={styles.timeCheck}><Text style={styles.timeText}>AM</Text></View>
           </View>
-
-         <View style={styles.alertBox}><Text style={styles.alertText}>MESSAGE</Text></View>
-         <View style={styles.submit}><Text style={styles.submitText}>SEND</Text></View>
-      </View>
-    </Image>
+          <TextInput
+            placeholder="MESSAGE"
+            style={styles.inputs}/>
+            <View style={styles.submit}><Text style={styles.submitText} onPress={() => Alert.alert('MESSAGE SENT', "",[
+             {text: 'OK', onPress: () => this.props.navigator.pop()}])}>SEND</Text></View>
+         </View>
+     </Image>
 
 
     );

@@ -3,20 +3,23 @@ import {
 } from 'react-native';
 
 module.exports = StyleSheet.create({
-  emptyView: {
-  height: 50,
-  width: 100,
-  justifyContent: 'center',
-  marginTop: 20
-  },
+
   container: {
-  // flex: 1,
+  flex: 1,
   // justifyContent:  'center',
   alignItems:'center'
   },
 
+  emptyView: {
+  height: 50,
+  width: 100,
+  justifyContent: 'center',
+  marginTop: 20,
+  padding: 10,
+  },
+
   button: {
-  borderColor: '#e9a99a',
+  borderColor: '#e9a99a', // transparent
   borderWidth: 2,
   height: 50,
   width: 100,
@@ -26,9 +29,9 @@ module.exports = StyleSheet.create({
   },
 
   buttonText: {
-  fontSize:15,
+  fontSize:17,
   color: '#e9a99a',
-  marginLeft: 20
+  // marginLeft: 30
   },
 
   timeCheck: {
@@ -60,23 +63,20 @@ module.exports = StyleSheet.create({
   borderLeftColor: 'transparent',
   borderRightColor: 'transparent',
   borderBottomColor: '#e9a99a',
-  position: 'absolute',
-  left: 5,
-  top:5,
   transform: [
    {rotate: '270deg'}
   ],
   },
 
-  alertBox: {
-  borderColor: '#5b6284',
-  borderWidth: 2,
-  height: 200,
-  width: 300,
-  borderRadius: 15,
-  marginTop: 70,
-  alignItems: 'center'
-  },
+  // alertBox: {
+  // borderColor: '#5b6284',
+  // borderWidth: 2,
+  // height: 200,
+  // width: 300,
+  // borderRadius: 15,
+  // marginTop: 70,
+  // alignItems: 'center'
+  // },
 
   submit: {
   backgroundColor: '#937778',
@@ -89,13 +89,13 @@ module.exports = StyleSheet.create({
   alignItems: 'center'
   },
 
-  alertText: {
-  color: '#5b6284',
-  fontSize: 20,
-  justifyContent: 'center',
-  alignItems: 'center',
-  marginTop: 15,
-  },
+  // alertText: {
+  // color: '#5b6284',
+  // fontSize: 20,
+  // justifyContent: 'center',
+  // alignItems: 'center',
+  // marginTop: 15,
+  // },
 
   submitText: {
   justifyContent: 'center',
@@ -108,6 +108,17 @@ module.exports = StyleSheet.create({
   timeText: {
   color: 'white',
   fontSize: 20,
-  }
+  },
 
-});
+  inputs: {
+  borderColor: '#5b6284',
+  borderWidth: 2,
+  height: 200,
+  width: 300,
+  borderRadius: 15,
+  marginTop: 70,
+  color: 'white',
+  padding: 20,
+  },
+
+  });

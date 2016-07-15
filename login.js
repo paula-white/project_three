@@ -45,11 +45,11 @@ var Login = React.createClass({
           phoneNumber: "+61",
           appearance: {
             backgroundColor: {
-              hex: "#ffffff",
+              hex: "#0f1324",
               alpha: 1.0
             },
             accentColor: {
-              hex: "#43a16f",
+              hex: "#FFFFFF",
               alpha: 0.7
             },
             headerFont: {
