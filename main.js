@@ -22,19 +22,6 @@ var ROUTES = {
   alerts: Alerts
 };
 
-
-// Have a function that runs every hour
-  // Based on the timestamp that comes from the Geolocation
-    // Change the styles on the Navigator
-    // var time = new Date(TimeStamp);
-    // var hours = time.getHours(),
-
-// var hours = function () {
-//
-//
-// };
-
-
 // class MyDigits extends React.Component{
 module.exports = React.createClass({
   mixins: [TimerMixin],
@@ -81,6 +68,6 @@ module.exports = React.createClass({
 
 var styles = StyleSheet.create({
   container: {
-  
+
   }
 });

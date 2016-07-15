@@ -3,7 +3,6 @@ import {
 } from 'react-native';
 
 module.exports = StyleSheet.create({
-
   container: {
   flex: 1,
   // justifyContent:  'center',
@@ -12,17 +11,17 @@ module.exports = StyleSheet.create({
 
   emptyView: {
   height: 50,
-  width: 100,
+  width: 150,
   justifyContent: 'center',
   marginTop: 20,
   padding: 10,
   },
 
   button: {
-  borderColor: '#e9a99a', // transparent
+  borderColor: 'transparent',
   borderWidth: 2,
   height: 50,
-  width: 100,
+  width: 150,
   justifyContent: 'center',
   borderRadius: 15,
   marginTop: 20
@@ -31,7 +30,8 @@ module.exports = StyleSheet.create({
   buttonText: {
   fontSize:17,
   color: '#e9a99a',
-  // marginLeft: 30
+  marginLeft: 30,
+  marginTop: -17
   },
 
   timeCheck: {
@@ -68,16 +68,6 @@ module.exports = StyleSheet.create({
   ],
   },
 
-  // alertBox: {
-  // borderColor: '#5b6284',
-  // borderWidth: 2,
-  // height: 200,
-  // width: 300,
-  // borderRadius: 15,
-  // marginTop: 70,
-  // alignItems: 'center'
-  // },
-
   submit: {
   backgroundColor: '#937778',
   height: 50,
@@ -89,13 +79,6 @@ module.exports = StyleSheet.create({
   alignItems: 'center'
   },
 
-  // alertText: {
-  // color: '#5b6284',
-  // fontSize: 20,
-  // justifyContent: 'center',
-  // alignItems: 'center',
-  // marginTop: 15,
-  // },
 
   submitText: {
   justifyContent: 'center',
@@ -116,6 +99,9 @@ module.exports = StyleSheet.create({
   height: 200,
   width: 300,
   borderRadius: 15,
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginLeft: 35,
   marginTop: 70,
   color: 'white',
   padding: 20,

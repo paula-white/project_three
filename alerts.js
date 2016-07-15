@@ -29,13 +29,13 @@ class Alerts extends Component {
     if (randomNumber < 0.34) {
         image = require("./img/s1.png");
         styles = require("./styles/style1.js");
-    } else if (randomNumber < 0.12) {
+    } else if (randomNumber < 0.25) {
         image = require("./img/s2.png");
         styles = require("./styles/style2.js");
-    }  else if (randomNumber < 0.55) {
+    }  else if (randomNumber < 0.65) {
         image = require("./img/s4.png");
         styles = require("./styles/style4.js");
-    }  else if (randomNumber < 0.64) {
+    }  else if (randomNumber < 0.54) {
         image = require("./img/daytime.png");
         styles = require("./styles/styledaytime.js");
     } else if (randomNumber < 0.47) {
@@ -49,7 +49,7 @@ class Alerts extends Component {
       <Image source={image} style={{width: 375, height: 700}}>
           <TouchableHighlight style={styles.button} onPress={ () => this.props.navigator.pop() }>
             <View style={styles.emptyView}>
-              <View style={styles.triangle} />
+             <View style={styles.triangle} />
               <Text style={styles.buttonText}>{this.props.contact.firstName.toUpperCase()}</Text>
             </View>
           </TouchableHighlight>
@@ -62,12 +62,10 @@ class Alerts extends Component {
           <TextInput
             placeholder="MESSAGE"
             style={styles.inputs}/>
-            <View style={styles.submit}><Text style={styles.submitText} onPress={() => Alert.alert('MESSAGE SENT', "",[
+            <View style={styles.submit}><Text style={styles.submitText} onPress={() => Alert.alert('ALERT SENT', "",[
              {text: 'OK', onPress: () => this.props.navigator.pop()}])}>SEND</Text></View>
          </View>
-     </Image>
-
-
+      </Image>
     );
   }
 }

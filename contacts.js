@@ -136,24 +136,21 @@ var Contacts = React.createClass({
 
   },
   DigitsAuthenticateButton: {
-    borderColor: '#586776',
-    borderWidth: 2,
-    height: 30,
-    width: 70,
-    justifyContent: 'center',
-    borderRadius: 5,
-    marginLeft: 275,
-    marginTop: 15,
+  borderColor: '#586776',
+  borderWidth: 2,
+  height: 30,
+  width: 70,
+  justifyContent: 'center',
+  borderRadius: 5,
+  marginLeft: 275,
+  marginTop: 15,
 
   },
   DigitsAuthenticateButtonText: {
-    fontSize: 13,
-    color: '#586776',
-    alignSelf: 'center',
-    // fontWeight: 'bold'
-
+  fontSize: 13,
+  color: '#586776',
+  alignSelf: 'center',
   }
-
 });
 
 
