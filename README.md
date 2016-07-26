@@ -1,4 +1,4 @@
-# project_three
+# HEYO Mobile Application
 
 Heyo is a mobile application built with React Native. It is a social media app that sends push alerts to friends and family 
 overseas to send them positive messages and let them know you are thinking about them without the effort of a response involved.
